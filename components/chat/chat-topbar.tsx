@@ -64,7 +64,6 @@ export default function ChatTopbar({
       // Extract the "name" field from each model object and store them in the state
       const modelNames = data.data.map((model: any) => model.id);
 
-      console.log("Available models: ", modelNames);
       // save the first and only model in the list as selectedModel in localstorage
       setChatOptions({ ...chatOptions, selectedModel: modelNames[0] });
       

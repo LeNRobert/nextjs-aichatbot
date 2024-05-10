@@ -2,7 +2,7 @@
 
 import { useChat } from 'ai/react';
 import { toast } from "sonner";
-import React from 'react';
+import React, { use } from 'react';
 import { v4 as uuidv4 } from "uuid";
 import { ChatRequestOptions } from "ai";
 import { ChatOptions } from "@/components/chat/chat-options";
@@ -11,7 +11,12 @@ import { ChatLayout } from "@/components/chat/chat-layout";
 
 
 export default function Chat() {
-  const [chatId, setChatId] = React.useState<string>("");
+  const [chatId, setChatId] = useLocalStorageState<string>(
+    "chat",
+    {
+      defaultValue: ""
+    });
+
   const { 
     messages,
     input, 
@@ -86,7 +91,7 @@ export default function Chat() {
 
   return (
     <main className="flex h-[calc(100dvh)] flex-col items-center ">
-      <h1 className="text-3xl font-bold text-center mt-4">Chat</h1>
+      <h1 className="text-3xl font-bold text-center mt-4">Chat {chatId}</h1>
       <ChatLayout
         chatId={chatId}
         setChatId={setChatId}

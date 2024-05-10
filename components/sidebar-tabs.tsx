@@ -8,7 +8,7 @@ import * as Tabs from "@radix-ui/react-tabs";
 import { Message } from "ai/react";
 import Link from "next/link";
 
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ChatOptions } from "./chat/chat-options";
 import Settings from "./settings";
@@ -26,6 +26,7 @@ interface Chats {
   [key: string]: { chatId: string; messages: Message[] }[];
 }
 interface SidebarTabsProps {
+  setChatId: React.Dispatch<React.SetStateAction<string>>;
   isLoading: boolean;
   localChats: Chats;
   selectedChatId: string;
@@ -41,6 +42,7 @@ const SidebarTabs = ({
   chatOptions,
   setChatOptions,
   handleDeleteChat,
+  setChatId,
 }: SidebarTabsProps) => (
   <Tabs.Root
     className="overflow-hidden h-full bg-accent/20 dark:bg-card/35"
@@ -62,13 +64,14 @@ const SidebarTabs = ({
                         const isSelected =
                           chatId.substring(5) === selectedChatId;
                         return (
-                          <li
-                            className="flex w-full items-center relative"
-                            key={chatIndex}
-                          >
+                          <li className="flex w-full items-center relative" key={chatIndex}>
                             <div className="flex-col w-full truncate">
-                              <Link
-                                href={`/chats/${chatId.substring(5)}`}
+                              <Button
+                                size="sm"
+                                variant="ghost"
+                                onClick={() => {
+                                  setChatId(chatId.substring(5));
+                                }}
                                 className={cn(
                                   {
                                     [buttonVariants({
@@ -77,7 +80,7 @@ const SidebarTabs = ({
                                     [buttonVariants({ variant: "ghost" })]:
                                       !isSelected,
                                   },
-                                  "flex gap-2 p-2 justify-start"
+                                  "justify-start gap-2 w-full"
                                 )}
                               >
                                 <span className="text-sm font-normal max-w-[184px] truncate">
@@ -85,16 +88,14 @@ const SidebarTabs = ({
                                     ? messages[0].content
                                     : ""}
                                 </span>
-                              </Link>
+                              </Button>
                             </div>
                             <div className="absolute right-0 rounded-xs">
                               <Dialog>
                                 <DialogTrigger
                                   className={
                                     "items-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50  h-8 rounded-sm px-3 text-xs justify-start gap-2 w-full hover:text-red-500 hover:bg-card dark:hover:bg-accent" +
-                                    (isSelected
-                                      ? " bg-accent dark:bg-card"
-                                      : " ")
+                                    (isSelected ? " bg-accent dark:bg-card" : " ")
                                   }
                                 >
                                   <TrashIcon className="w-4 h-4" />
@@ -103,8 +104,7 @@ const SidebarTabs = ({
                                   <DialogHeader className="space-y-4">
                                     <DialogTitle>Delete chat?</DialogTitle>
                                     <DialogDescription>
-                                      Are you sure you want to delete this chat?
-                                      This action cannot be undone.
+                                      Are you sure you want to delete this chat? This action cannot be undone.
                                     </DialogDescription>
                                     <div className="flex justify-end gap-2">
                                       <DialogClose className="border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 rounded-sm">

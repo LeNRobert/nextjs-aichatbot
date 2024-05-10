@@ -157,6 +157,7 @@ export function Sidebar({
         chatOptions={chatOptions}
         setChatOptions={setChatOptions}
         handleDeleteChat={handleDeleteChat}
+        setChatId={setChatId}
       />
     </div>
   );
