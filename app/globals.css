@@ -84,3 +84,12 @@
   height: 0;
   visibility: hidden;
 }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
