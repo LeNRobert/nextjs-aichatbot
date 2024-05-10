@@ -23,7 +23,10 @@ export default function SettingsThemeToggle() {
       className="justify-start gap-2 w-full"
       size="sm"
       variant="ghost"
-      onClick={() => setTheme(nextTheme)}
+      onClick={() => {
+        console.log("Button clicked", nextTheme);
+        setTheme(nextTheme);
+      }}
     >
       {nextTheme === "light" ? (
         <SunIcon className="w-4 h-4" />
