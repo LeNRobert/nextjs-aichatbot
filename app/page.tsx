@@ -12,7 +12,7 @@ import { ChatLayout } from "@/components/chat/chat-layout";
 
 export default function Chat() {
   const [chatId, setChatId] = useLocalStorageState<string>(
-    "chat",
+    "lastChat",
     {
       defaultValue: ""
     });
@@ -91,7 +91,7 @@ export default function Chat() {
 
   return (
     <main className="flex h-[calc(100dvh)] flex-col items-center ">
-      <h1 className="text-3xl font-bold text-center mt-4">Chat {chatId}</h1>
+      <h1 className="text-3xl font-bold text-center mt-4">Chat</h1>
       <ChatLayout
         chatId={chatId}
         setChatId={setChatId}
