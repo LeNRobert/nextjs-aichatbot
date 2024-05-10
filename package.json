@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d .next"
   },
   "dependencies": {
     "@mistralai/mistralai": "^0.1.3",

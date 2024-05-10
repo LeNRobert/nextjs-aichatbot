@@ -10,14 +10,7 @@ import useLocalStorageState from "use-local-storage-state";
 import { ChatLayout } from "@/components/chat/chat-layout";
 
 
-
-
-interface ChatPageProps {
-  chatId: string;
-  setChatId: React.Dispatch<React.SetStateAction<string>>;
-}
-
-export default function Chat({}: ChatPageProps) {
+export default function Chat() {
   const [chatId, setChatId] = React.useState<string>("");
   const { 
     messages,
