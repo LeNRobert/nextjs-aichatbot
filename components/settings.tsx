@@ -32,7 +32,7 @@ const TemperatureSlider = ({
           value={chatOptions.temperature}
           onChange={handleTemperatureChange}
           min={0}
-          max={2}
+          max={1}
           step={0.1}
         />
       </div>
@@ -44,7 +44,7 @@ const TemperatureSlider = ({
           value={chatOptions.temperature}
           onChange={handleTemperatureChange}
           min="0.0"
-          max="2.0"
+          max="1.0"
           step="0.1"
           className="w-full h-1 bg-gray-200 rounded-sm appearance-none cursor-pointer range-sm dark:bg-gray-700"
         />
