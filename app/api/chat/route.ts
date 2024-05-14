@@ -28,15 +28,15 @@ const addSystemMessage = (
     // if there are no messages, add the system prompt as the first message
     messages = [
       {
-        content: systemPrompt,
         role: "system",
+        content: systemPrompt,
       },
     ];
   } else if (messages.length === 0) {
     // if there are no messages, add the system prompt as the first message
     messages.push({
-      content: systemPrompt,
       role: "system",
+      content: systemPrompt
     });
   } else {
     // if there are messages, check if the first message is a system prompt
@@ -46,8 +46,8 @@ const addSystemMessage = (
     } else {
       // if the first message is not a system prompt, add the system prompt as the first message
       messages.unshift({
-        content: systemPrompt,
         role: "system",
+        content: systemPrompt,
       });
     }
   }
@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
   // Extract the `messages` from the body of the request
   const { messages, chatOptions } = await req.json();
 
-  const formattedMessages = formatMessages(
+  formatMessages(
     addSystemMessage(messages, chatOptions.systemPrompt)
   );
 

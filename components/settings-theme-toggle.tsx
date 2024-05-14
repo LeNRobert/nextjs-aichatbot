@@ -24,7 +24,6 @@ export default function SettingsThemeToggle() {
       size="sm"
       variant="ghost"
       onClick={() => {
-        console.log("Button clicked", nextTheme);
         setTheme(nextTheme);
       }}
     >

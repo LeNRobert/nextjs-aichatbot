@@ -32,14 +32,11 @@ export default function Chat() {
     }
   });
 
-  const [chatOptions, setChatOptions] = useLocalStorageState<ChatOptions>(
-    "chatOptions",
+  const [chatOptions, setChatOptions] = React.useState<ChatOptions>(
     {
-      defaultValue: {
-        selectedModel: "",
-        systemPrompt: "",
-        temperature: 0.9,
-      },
+      selectedModel: "",
+      systemPrompt: "",
+      temperature: 0.7,
     }
   );
 
@@ -47,7 +44,8 @@ export default function Chat() {
     if (chatId) {
       const item = localStorage.getItem(`chat_${chatId}`);
       if (item) {
-        setMessages(JSON.parse(item));
+        setMessages(JSON.parse(item).messages);
+        setChatOptions(JSON.parse(item).chatOptions);
       }
     } else {
       setMessages([]);
@@ -57,11 +55,12 @@ export default function Chat() {
   React.useEffect(() => {
     if (!isLoading && !error && chatId && messages.length > 0) {
       // Save messages to local storage
-      localStorage.setItem(`chat_${chatId}`, JSON.stringify(messages));
+      localStorage.setItem(`chat_${chatId}`, JSON.stringify({messages,chatOptions}));
+
       // Trigger the storage event to update the sidebar component
       window.dispatchEvent(new Event("storage"));
     }
-  }, [messages, chatId, isLoading, error]);
+  }, [messages, chatId, isLoading, error, chatOptions]);
 
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {

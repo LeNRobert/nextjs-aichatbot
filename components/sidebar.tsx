@@ -59,7 +59,7 @@ export function Sidebar({
     const chatObjects = chats.map((chat) => {
       const item = localStorage.getItem(chat);
       return item
-        ? { chatId: chat, messages: JSON.parse(item) }
+        ? { chatId: chat, messages: JSON.parse(item).messages }
         : { chatId: "", messages: [] };
     });
 

@@ -10,6 +10,7 @@ const TemperatureSlider = ({
   setChatOptions,
 }: SystemPromptProps) => {
   const handleTemperatureChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(chatOptions.temperature, parseFloat(e.target.value));
     setChatOptions({ ...chatOptions, temperature: parseFloat(e.target.value) });
   };
 
@@ -24,7 +25,7 @@ const TemperatureSlider = ({
           Temperature
         </label>
         <Input
-          type="text"
+          type="number"
           id="small-input"
           className="w-1/4 text-gray-900 hover:border hover:border-gray-300 rounded-sm hover:bg-gray-200 text-xs focus:ring-blue-500 focus:border-blue-500 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-6
           text-right
