@@ -21,6 +21,8 @@ export interface ChatProps {
   isLoading: boolean;
   error: undefined | Error;
   stop: () => void;
+  setModelsList: React.Dispatch<React.SetStateAction<string[]>>;
+  modelsList: string[];
 }
 
 export interface ChatTopbarProps {
@@ -40,6 +42,8 @@ export default function Chat({
   setChatOptions,
   chatId,
   setChatId,
+  setModelsList,
+  modelsList,
 }: ChatProps & ChatTopbarProps) {
   return (
     <div className="flex flex-col justify-between w-full h-full  ">
@@ -50,6 +54,8 @@ export default function Chat({
         chatId={chatId}
         setChatId={setChatId}
         messages={messages}
+        setModelsList={setModelsList}
+        modelsList={modelsList}
       />
 
       <ChatList

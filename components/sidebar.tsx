@@ -18,6 +18,7 @@ interface SidebarProps {
   setChatId: React.Dispatch<React.SetStateAction<string>>;
   chatOptions: ChatOptions;
   setChatOptions: React.Dispatch<React.SetStateAction<ChatOptions>>;
+  modelsList: string[];
 }
 
 interface Chats {
@@ -31,6 +32,7 @@ export function Sidebar({
   setChatId,
   chatOptions,
   setChatOptions,
+  modelsList,
 }: SidebarProps) {
   const [localChats, setLocalChats] = useState<Chats>({});
   const [isLoading, setIsLoading] = useState(true);
@@ -158,6 +160,7 @@ export function Sidebar({
         setChatOptions={setChatOptions}
         handleDeleteChat={handleDeleteChat}
         setChatId={setChatId}
+        modelsList={modelsList}
       />
     </div>
   );

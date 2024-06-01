@@ -31,6 +31,8 @@ interface ChatTopbarProps {
   chatId?: string;
   setChatId: React.Dispatch<React.SetStateAction<string>>;
   messages: Message[];
+  setModelsList: React.Dispatch<React.SetStateAction<string[]>>;
+  modelsList: string[];
 }
 
 export default function ChatTopbar({
@@ -40,6 +42,8 @@ export default function ChatTopbar({
   chatId,
   setChatId,
   messages,
+  setModelsList,
+  modelsList,
 }: ChatTopbarProps) {
   const hasMounted = useHasMounted();
 
@@ -61,11 +65,9 @@ export default function ChatTopbar({
       }
 
       const data = await res.json();
-      // Extract the "name" field from each model object and store them in the state
-      const modelNames = data.data.map((model: any) => model.id);
+      setModelsList(data.data.map((model: any) => model.id));
 
-      // save the first and only model in the list as selectedModel in localstorage
-      setChatOptions({ ...chatOptions, selectedModel: modelNames[0] });
+      setChatOptions({ ...chatOptions, selectedModel: 'open-mistral-7b' });
       
     } catch (error) {
       setChatOptions({ ...chatOptions, selectedModel: undefined });
@@ -97,7 +99,6 @@ export default function ChatTopbar({
           </div>
         </SheetTrigger>
         <SheetContent side="left">
-          <div>
             <Sidebar
               chatId={chatId || ""}
               setChatId={setChatId}
@@ -105,8 +106,8 @@ export default function ChatTopbar({
               isMobile={false}
               chatOptions={chatOptions}
               setChatOptions={setChatOptions}
+              modelsList={modelsList}
             />
-          </div>
         </SheetContent>
       </Sheet>
 

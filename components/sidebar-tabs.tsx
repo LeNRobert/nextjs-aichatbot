@@ -6,7 +6,7 @@ import { DialogClose } from "@radix-ui/react-dialog";
 import { ChatBubbleIcon, GearIcon, TrashIcon } from "@radix-ui/react-icons";
 import * as Tabs from "@radix-ui/react-tabs";
 import { Message } from "ai/react";
-import Link from "next/link";
+
 
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -33,6 +33,7 @@ interface SidebarTabsProps {
   chatOptions: ChatOptions;
   setChatOptions: React.Dispatch<React.SetStateAction<ChatOptions>>;
   handleDeleteChat: (chatId: string) => void;
+  modelsList: string[];
 }
 
 const SidebarTabs = ({
@@ -43,6 +44,7 @@ const SidebarTabs = ({
   setChatOptions,
   handleDeleteChat,
   setChatId,
+  modelsList,
 }: SidebarTabsProps) => (
   <Tabs.Root
     className="overflow-hidden h-full bg-accent/20 dark:bg-card/35"
@@ -136,7 +138,7 @@ const SidebarTabs = ({
       </Tabs.Content>
       <Tabs.Content className="h-screen overflow-y-auto" value="settings">
         <div className="h-full mb-16 pl-2">
-          <Settings chatOptions={chatOptions} setChatOptions={setChatOptions} />
+          <Settings chatOptions={chatOptions} setChatOptions={setChatOptions} modelsList={modelsList}/>
         </div>
       </Tabs.Content>
     </div>

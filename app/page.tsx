@@ -34,11 +34,13 @@ export default function Chat() {
 
   const [chatOptions, setChatOptions] = React.useState<ChatOptions>(
     {
-      selectedModel: "",
+      selectedModel: "open-mistral-7b",
       systemPrompt: "",
       temperature: 0.7,
     }
   );
+
+  const [modelsList, setModelsList] = React.useState<string[]>([]);
 
   React.useEffect(() => {
     if (chatId) {
@@ -90,7 +92,7 @@ export default function Chat() {
 
   return (
     <main className="flex h-[calc(100dvh)] flex-col items-center ">
-      <h1 className="text-3xl font-bold text-center mt-4">Chat</h1>
+      <h1 className="text-3xl font-bold text-center mt-4">{chatOptions.selectedModel}</h1>
       <ChatLayout
         chatId={chatId}
         setChatId={setChatId}
@@ -105,6 +107,8 @@ export default function Chat() {
         stop={stop}
         navCollapsedSize={10}
         defaultLayout={[30, 160]}
+        modelsList={modelsList}
+        setModelsList={setModelsList}
       />
     </main>
   );

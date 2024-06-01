@@ -10,6 +10,7 @@ interface ChatLayoutProps {
   defaultCollapsed?: boolean;
   navCollapsedSize: number;
   chatId: string;
+  modelsList: string[];
 }
 
 type MergedProps = ChatLayoutProps & ChatProps & ChatTopbarProps;
@@ -29,6 +30,8 @@ export function ChatLayout({
   setChatId,
   chatOptions,
   setChatOptions,
+  modelsList,
+  setModelsList,
 }: MergedProps) {
   const [isCollapsed, setIsCollapsed] = React.useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -61,6 +64,7 @@ export function ChatLayout({
           setChatId={setChatId}
           chatOptions={chatOptions}
           setChatOptions={setChatOptions}
+          modelsList={modelsList}
         />
       </div>
       <div className="relative flex h-full max-w-full flex-1 flex-col overflow-hidden">
@@ -76,6 +80,8 @@ export function ChatLayout({
           isLoading={isLoading}
           error={error}
           stop={stop}
+          modelsList={modelsList}
+          setModelsList={setModelsList}
         />
       </div>
     </div>
