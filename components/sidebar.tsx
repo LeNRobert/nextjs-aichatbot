@@ -5,7 +5,7 @@ import { Pencil2Icon } from "@radix-ui/react-icons";
 import { Message } from "ai/react";
 import Image from "next/image";
 
-import OllamaLogo from "../public/images/ollama.png";
+import CatLogo from "../public/images/cat_icon.png";
 import { ChatOptions } from "./chat/chat-options";
 import SidebarTabs from "./sidebar-tabs";
 import Link from "next/link";
@@ -139,7 +139,7 @@ export function Sidebar({
             <div className="flex align-start gap-2">
               {!isCollapsed && !isMobile && (
                 <Image
-                  src={OllamaLogo}
+                  src={CatLogo}
                   alt="AI"
                   width={14}
                   height={14}

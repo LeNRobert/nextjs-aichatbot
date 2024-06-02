@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import Image from "next/image";
 
-import OllamaLogo from "../../public/images/ollama.png";
+import CatLogo from "../../public/images/cat_icon.png";
 import CodeDisplayBlock from "../code-display-block";
 import { Message } from "ai";
 
@@ -40,7 +40,7 @@ export default function ChatList({ messages, isLoading }: ChatListProps) {
       <div className="w-full h-full flex justify-center items-center">
         <div className="flex flex-col gap-4 items-center">
           <Image
-            src={OllamaLogo}
+            src={CatLogo}
             alt="AI"
             width={60}
             height={60}
@@ -75,7 +75,7 @@ export default function ChatList({ messages, isLoading }: ChatListProps) {
                         <div className="dark:invert h-full w-full bg-black" />
                       ) : (
                         <Image
-                          src={OllamaLogo}
+                          src={CatLogo}
                           alt="AI"
                           className="object-contain dark:invert aspect-square h-full w-full"
                         />
