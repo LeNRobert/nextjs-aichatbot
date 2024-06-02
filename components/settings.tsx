@@ -11,7 +11,6 @@ const TemperatureSlider = ({
   setChatOptions,
 }: SystemPromptProps) => {
   const handleTemperatureChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(chatOptions.temperature, parseFloat(e.target.value));
     setChatOptions({ ...chatOptions, temperature: parseFloat(e.target.value) });
   };
 
@@ -64,7 +63,7 @@ export default function Settings({
 }: SettingsProps) {
   return (
     <>
-      <CustomDropdownMenu modelsList={modelsList}/>
+      <CustomDropdownMenu modelsList={modelsList} chatOptions={chatOptions} setChatOptions={setChatOptions}/>
       <SystemPrompt chatOptions={chatOptions} setChatOptions={setChatOptions} />
       <TemperatureSlider
         chatOptions={chatOptions}
