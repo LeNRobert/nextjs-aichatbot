@@ -16,7 +16,7 @@ const TemperatureSlider = ({
 
   return (
     <div>
-      <div className="mx-2 flex align-middle gap-4 items-center justify-between
+      <div className="mx-2 flex align-middle gap-4 items-center justify-between pt-3
       ">
         <label
           htmlFor="small-input"
@@ -38,7 +38,7 @@ const TemperatureSlider = ({
         />
       </div>
 
-      <div className="p-2">
+      <div className="p-2 pb-5">
         <input
           id="labels-range-input"
           type="range"

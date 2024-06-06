@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 
 import Image from "next/image";
@@ -106,11 +107,13 @@ export default function ChatList({ messages, isLoading }: ChatListProps) {
                               </React.Fragment>
                             );
                           } else {
+                            const [lang, ...codeParts] = part.trim().split("\n");
+                            const code = codeParts.join("\n");
                             return (
                               <CodeDisplayBlock
                                 key={index}
-                                code={part.trim()}
-                                lang=""
+                                code={code}
+                                lang={lang}
                               />
                             );
                           }

@@ -11,14 +11,22 @@ import {
 } from "@radix-ui/react-icons";
 import { Message } from "ai/react";
 import { toast } from "sonner";
-
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import CustomDropdownMenu from "../dropdown-menu";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+
 import { encodeChat, tokenLimit } from "@/lib/token-counter";
 import { basePath, useHasMounted } from "@/lib/utils";
 import { Sidebar } from "../sidebar";
@@ -48,7 +56,6 @@ export default function ChatTopbar({
   const hasMounted = useHasMounted();
 
   const currentModel = chatOptions && chatOptions.selectedModel;
-  const [error, setError] = React.useState<string | undefined>(undefined);
 
   const fetchData = async () => {
     if (!hasMounted) {

@@ -35,11 +35,11 @@ export default function SystemPrompt({
 
   return (
     <div>
-      <div className="justify-start gap-2 w-full rounded-sm px-2 text-xs">
+      <div className="justify-start gap-2 w-full rounded-sm px-2 text-xs pt-3">
         <p>System prompt</p>
       </div>
 
-      <div className="m-2">
+      <div className="m-2 pb-3">
         <Textarea
           className="resize-none bg-white/20 dark:bg-card/35"
           autoComplete="off"
