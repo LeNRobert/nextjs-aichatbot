@@ -21,7 +21,7 @@ export interface CustomDropdownMenuProps {
   setChatOptions: Dispatch<SetStateAction<ChatOptions>>;
 }
 
-export default function CustomDropdownMenu ({
+export default function ModelMenu ({
   modelsList,
   chatOptions,
   setChatOptions,
@@ -59,15 +59,11 @@ export default function CustomDropdownMenu ({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="flex w-full text-sm font-medium items-center
-        border border-input bg-background hover:text-accent-foreground
-        px-2 py-2 rounded-sm z-50"
       >
         <DropdownMenuRadioGroup value={selectedModel} onValueChange={handleSelectionChange}>
         {modelsList.map((model) => (
           <DropdownMenuRadioItem  
           value={model}
-          className="w-full text-gray-900 hover:border hover:border-gray-300 rounded-sm hover:bg-gray-200 text-xs focus:ring-blue-500 focus:border-blue-500 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-6 text-left"
           >{model}</DropdownMenuRadioItem >
         ))}
         </DropdownMenuRadioGroup> 

@@ -3,9 +3,9 @@ import React from "react";
 
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
-import { CodeBlock, dracula, github } from "react-code-blocks";
+import { CodeBlock, dracula, github, monokai, solarizedDark, solarizedLight, tomorrowNight, nord, atomOneDark, atomOneLight, obsidian, ocean, zenburn } from "react-code-blocks";
 import { toast } from "sonner";
-
+import useLocalStorageState from "use-local-storage-state";
 import { Button } from "./ui/button";
 
 interface ButtonCodeblockProps {
@@ -16,6 +16,27 @@ interface ButtonCodeblockProps {
 export default function CodeDisplayBlock({ code, lang }: ButtonCodeblockProps) {
   const [isCopied, setisCopied] = React.useState(false);
   const { theme } = useTheme();
+  const [ codeTheme, setCodeTheme ] = useLocalStorageState<{ light: string, dark: string }>(
+    "codeTheme",
+    {
+      defaultValue: { light: "github", dark: "dracula" }
+    }
+  );
+
+  const codeThemes = [
+    { name: "dracula", theme: dracula },
+    { name: "github", theme: github },
+    { name: "monokai", theme: monokai },
+    { name: "solarizedDark", theme: solarizedDark },
+    { name: "solarizedLight", theme: solarizedLight },
+    { name: "tomorrowNight", theme: tomorrowNight },
+    { name: "nord", theme: nord },
+    { name: "atomOneDark", theme: atomOneDark },
+    { name: "atomOneLight", theme: atomOneLight },
+    { name: "obsidian", theme: obsidian },
+    { name: "ocean", theme: ocean },
+    { name: "zenburn", theme: zenburn },
+  ];
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(code);
@@ -38,7 +59,7 @@ export default function CodeDisplayBlock({ code, lang }: ButtonCodeblockProps) {
         text={code}
         language={lang}
         showLineNumbers={false}
-        theme={theme === "dark" ? dracula : github}
+        theme={theme === "light" ? codeThemes.find((theme) => theme.name === codeTheme.light)?.theme : codeThemes.find((theme) => theme.name === codeTheme.dark)?.theme}
       />
       <Button
         onClick={copyToClipboard}

@@ -5,7 +5,7 @@ import { Pencil2Icon } from "@radix-ui/react-icons";
 import { Message } from "ai/react";
 import Image from "next/image";
 
-import CatLogo from "../public/images/cat_icon.png";
+import { CatIcon } from "lucide-react";
 import { ChatOptions } from "./chat/chat-options";
 import SidebarTabs from "./sidebar-tabs";
 import Link from "next/link";
@@ -138,13 +138,7 @@ export function Sidebar({
           <div className="flex gap-3 p-2 items-center justify-between w-full">
             <div className="flex align-start gap-2">
               {!isCollapsed && !isMobile && (
-                <Image
-                  src={CatLogo}
-                  alt="AI"
-                  width={14}
-                  height={14}
-                  className="dark:invert 2xl:block"
-                />
+                <CatIcon className="w-5 h-5" />
               )}
               <span>New chat</span>
             </div>

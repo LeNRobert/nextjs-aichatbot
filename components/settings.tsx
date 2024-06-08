@@ -3,8 +3,9 @@
 import ClearChatsButton from "./settings-clear-chats";
 import SettingsThemeToggle from "./settings-theme-toggle";
 import SystemPrompt, { SystemPromptProps } from "./system-prompt";
-import CustomDropdownMenu, {CustomDropdownMenuProps} from "./dropdown-menu";
+import ModelMenu, {CustomDropdownMenuProps} from "./model-menu";
 import { Input } from "./ui/input";
+import CodeThemeMenu from "./code-theme-menu";
 
 const TemperatureSlider = ({
   chatOptions,
@@ -63,14 +64,15 @@ export default function Settings({
 }: SettingsProps) {
   return (
     <>
-      <CustomDropdownMenu modelsList={modelsList} chatOptions={chatOptions} setChatOptions={setChatOptions}/>
+      <ModelMenu modelsList={modelsList} chatOptions={chatOptions} setChatOptions={setChatOptions}/>
       <SystemPrompt chatOptions={chatOptions} setChatOptions={setChatOptions} />
       <TemperatureSlider
         chatOptions={chatOptions}
         setChatOptions={setChatOptions}
       />
-      <SettingsThemeToggle />
-      <ClearChatsButton />
+      <SettingsThemeToggle/>
+      <CodeThemeMenu/>
+      <ClearChatsButton/>
     </>
   );
 }
