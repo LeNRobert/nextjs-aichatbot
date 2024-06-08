@@ -38,8 +38,8 @@ export function ChatLayout({
 
   useEffect(() => {
     const checkScreenWidth = () => {
-      setIsMobile(window.innerWidth <= 768);
-      setIsCollapsed(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth < 768);
+      setIsCollapsed(window.innerWidth < 768);
     };
 
     // Initial check

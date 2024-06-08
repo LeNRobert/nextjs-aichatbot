@@ -48,12 +48,14 @@ export default function CodeDisplayBlock({ code, lang }: ButtonCodeblockProps) {
   };
 
   return (
-    <div className="relative my-4 overflow-scroll overflow-x-scroll  flex flex-col text-start  ">
+    <div className="relative my-4 flex flex-col text-start w-full">
       <CodeBlock
         customStyle={
           { 
             borderRadius: "8px",
             padding: "12px",
+            overflow: "auto",
+            with: "100%",
           }
         }
         text={code}
