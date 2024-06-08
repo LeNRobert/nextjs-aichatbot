@@ -11,7 +11,6 @@ import {
 } from "@radix-ui/react-icons";
 import { Message } from "ai/react";
 import { toast } from "sonner";
-import CustomDropdownMenu from "../model-menu";
 import {
   Tooltip,
   TooltipContent,

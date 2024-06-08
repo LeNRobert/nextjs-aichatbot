@@ -61,12 +61,12 @@ export default function ModelMenu ({
       <DropdownMenuContent
       >
         <DropdownMenuRadioGroup value={selectedModel} onValueChange={handleSelectionChange}>
-        {modelsList.map((model) => (
-          <DropdownMenuRadioItem  
-          value={model}
-          >{model}</DropdownMenuRadioItem >
-        ))}
-        </DropdownMenuRadioGroup> 
+          {modelsList.map((model) => (
+            <DropdownMenuRadioItem key={model} value={model}>
+              {model}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
     </div>
