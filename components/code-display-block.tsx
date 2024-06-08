@@ -50,18 +50,19 @@ export default function CodeDisplayBlock({ code, lang }: ButtonCodeblockProps) {
   return (
     <div className="relative my-4 flex flex-col text-start w-full">
       <CodeBlock
-        customStyle={
-          { 
-            borderRadius: "8px",
-            padding: "12px",
-            overflow: "auto",
-            with: "100%",
-          }
-        }
+        customStyle={{
+          borderRadius: "8px",
+          padding: "12px",
+        }}
         text={code}
         language={lang}
         showLineNumbers={false}
-        theme={theme === "light" ? codeThemes.find((theme) => theme.name === codeTheme.light)?.theme : codeThemes.find((theme) => theme.name === codeTheme.dark)?.theme}
+        wrapLongLines={true}
+        theme={
+          theme === "light"
+            ? codeThemes.find((theme) => theme.name === codeTheme.light)?.theme
+            : codeThemes.find((theme) => theme.name === codeTheme.dark)?.theme
+        }
       />
       <Button
         onClick={copyToClipboard}
