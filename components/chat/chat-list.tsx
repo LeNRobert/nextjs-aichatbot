@@ -88,7 +88,9 @@ export default function ChatList({ messages, isLoading }: ChatListProps) {
                   <div className="relative flex w-full min-w-0 flex-col">
                     <div className="font-semibold pb-2">You</div>
                     <div className="flex-col gap-1 md:gap-3">
-                      {message.content}
+                      <span className="whitespace-pre-wrap">
+                        {message.content}
+                      </span>
                     </div>
                     <MessageToolbar />
                   </div>
