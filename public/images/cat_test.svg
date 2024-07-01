@@ -1,0 +1,19 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke="black" fill="black" fill-rule="evenodd"
+        d=" M 12 7 Q 20 7 20 15 Q 20 21 12 21 Q 4 21 4 15 Q 4 7 12 7 
+            M 12 8 Q 4 8 4 15 Q 4 21 12 21 Q 20 21 20 15 Q 20 8 12 8
+        "/>
+
+    <path stroke-linecap="round" stroke="black" fill="black"  d="M 4.5 11 Q 4 10 4 6 Q 4 2 9.5 7"/>
+    <path stroke-linecap="round" stroke="black" fill="black"  d="M 19.5 11 Q 20 10 20 6 Q 20 2 14.5 7"/>
+    
+
+    <rect width="2" height="3" x="7.5" y="13" />
+    <rect width="2" height="3" x="14.5" y="13" />
+    
+    <rect width="1" height="1" x="11.5" y="15"/>
+
+    <rect width="1" height="1" x="10.5" y="16"/>
+    <rect width="1" height="1" x="12.5" y="16"/>
+
+</svg>

@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 
 import Image from "next/image";
 
-import { CatIcon } from "lucide-react";
+import CatImage from "@/public/images/cat_ia_test.svg";
 import CodeDisplayBlock from "../code-display-block";
 import { Message } from "ai";
 
@@ -40,7 +40,13 @@ export default function ChatList({ messages, isLoading }: ChatListProps) {
     return (
       <div className="w-full h-full flex justify-center items-center">
         <div className="flex flex-col gap-4 items-center">
-          <CatIcon className="w-16 h-16 text-accent-foreground" />
+          <Image
+            src={CatImage}
+            alt="AI"
+            width={80}
+            height={80}
+            className="object-contain dark:invert"
+          />
           <p className="text-center text-xl text-muted-foreground">
             How can I help you today?
           </p>
@@ -69,7 +75,11 @@ export default function ChatList({ messages, isLoading }: ChatListProps) {
                       {message.role === "user" ? (
                         <div className="dark:invert h-full w-full bg-black" />
                       ) : (
-                        <CatIcon className="h-5 w-5"/>
+                        <Image
+                          src={CatImage}
+                          alt="AI"
+                          className="object-contain dark:invert"
+                        />
                       )}
                     </div>
                   </div>

@@ -1,0 +1,72 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <g stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" fill-rule="evenodd">
+        <path
+            d=" M 4.5 10 19.5 10 19.5 3 
+                15 7 Q 12 6 9 7
+                M 9 7 4.5 3 4.5 10
+            "                
+        /> 
+        <path 
+            d=" M 4 11.8 20 11.8
+                20 15.2 14.5 15.2
+                13.5 14 13.5 13
+                10.5 13 10.5 14
+                9.5 15.2 4 15.2 Z
+            " 
+        />
+        <path stroke-width="0.7" d="M 11 16 Q 12 15.5 13 16 M 13 16 12 17 11 16" />
+        <path stroke-width="0.7" fill="none" d="M 12 16 12 18 Q 13 20 16 19" />
+        <path stroke-width="0.7" fill="none" d="M 12 16 12 18 Q 11 20 8 19" />
+
+        <path fill="none" d="M 5 19 Q 5 20 10 22 
+                             Q 12 23 14 22 M 14 22 Q 19 20 19 19" />
+
+        <path stroke-width="0.7" d="M 8 16.5 Q 5 16.5 2.5 17"/>
+        <path stroke-width="0.7" d="M 7.5 17.5 Q 4 17.5 2.5 18.5"/>
+        <path stroke-width="0.7" d="M 16 16.5 Q 19 16.5 21.5 17"/>
+        <path stroke-width="0.7" d="M 16.5 17.5 Q 20 17.5 21.5 18.5"/>
+    </g>
+    
+    <symbol id="glasses-led-macron" viewBox="0 0 10 5">
+        <symbol id="pixel" viewBox="0 0 1 1" width="1" height="1">
+            <rect rx="0.2" ry="0.2" fill="white" stroke="0" width="0.9" height="0.9" x="0.05" y="0.05" />
+        </symbol>
+        <g>
+            <use href="#pixel" x="4" y="0"/>
+            <use href="#pixel" x="3" y="1"/> <use href="#pixel" x="4" y="1"/><use href="#pixel" x="5" y="1"/>
+            <use href="#pixel" x="2" y="2"/> <use href="#pixel" x="3" y="2"/> <use href="#pixel" x="5" y="2"/> <use href="#pixel" x="6" y="2"/>
+            <use href="#pixel" x="1" y="3"/> <use href="#pixel" x="2" y="3"/> <use href="#pixel" x="6" y="3"/> <use href="#pixel" x="7" y="3"/>
+            <use href="#pixel" x="0" y="4"/> <use href="#pixel" x="1" y="4"/> <use href="#pixel" x="7" y="4"/> <use href="#pixel" x="8" y="4"/>
+        </g>
+    </symbol>
+
+    <symbol id="glasses-led-X" viewBox="0 0 10 5">
+        <symbol id="pixel" viewBox="0 0 1 1" width="1" height="1">
+            <rect rx="0.2" ry="0.2" fill="white" stroke="0" width="0.9" height="0.9" x="0.05" y="0.05" />
+        </symbol>
+        <g>
+            <use href="#pixel" x="1" y="0"/> <use href="#pixel" x="2" y="0"/> <use href="#pixel" x="6" y="0"/> <use href="#pixel" x="7" y="0"/>
+            <use href="#pixel" x="2" y="1"/> <use href="#pixel" x="3" y="1"/> <use href="#pixel" x="5" y="1"/> <use href="#pixel" x="6" y="1"/>
+            <use href="#pixel" x="3" y="2"/> <use href="#pixel" x="4" y="2"/> <use href="#pixel" x="5" y="2"/>
+            <use href="#pixel" x="2" y="3"/> <use href="#pixel" x="3" y="3"/> <use href="#pixel" x="5" y="3"/> <use href="#pixel" x="6" y="3"/>
+            <use href="#pixel" x="1" y="4"/> <use href="#pixel" x="2" y="4"/> <use href="#pixel" x="6" y="4"/> <use href="#pixel" x="7" y="4"/>
+       </g>
+    </symbol>
+
+    <symbol id="glasses-led-happy" viewBox="0 0 10 5">
+        <symbol id="pixel" viewBox="0 0 1 1" width="1" height="1">
+            <rect rx="0.2" ry="0.2" fill="white" stroke="0" width="0.9" height="0.9" x="0.05" y="0.05" />
+        </symbol>
+        <g>
+            <use href="#pixel" x="2" y="0"/> <use href="#pixel" x="3" y="0"/> <use href="#pixel" x="4" y="0"/> <use href="#pixel" x="5" y="0"/> <use href="#pixel" x="6" y="0"/>
+            <use href="#pixel" x="1" y="1"/> <use href="#pixel" x="2" y="1"/> <use href="#pixel" x="3" y="1"/> <use href="#pixel" x="4" y="1"/><use href="#pixel" x="5" y="1"/> <use href="#pixel" x="6" y="1"/> <use href="#pixel" x="7" y="1"/>
+            <use href="#pixel" x="0" y="2"/> <use href="#pixel" x="1" y="2"/> <use href="#pixel" x="2" y="2"/>        <use href="#pixel" x="6" y="2"/> <use href="#pixel" x="7" y="2"/> <use href="#pixel" x="8" y="2"/>
+            <use href="#pixel" x="0" y="3"/> <use href="#pixel" x="1" y="3"/>         <use href="#pixel" x="7" y="3"/> <use href="#pixel" x="8" y="3"/> 
+            <use href="#pixel" x="0" y="4"/>        <use href="#pixel" x="8" y="4"/>
+        </g>
+    </symbol>
+    <use href="#glasses-led-happy" x="4" y="11.9" width="6.4" height="3.2"/>
+    <use href="#glasses-led-happy" x="4" y="11.9" width="6.4" height="3.2" transform="scale(-1, 1)" transform-origin="12"/>
+
+
+</svg>

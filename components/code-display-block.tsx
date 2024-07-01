@@ -3,10 +3,11 @@ import React from "react";
 
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
-import { CodeBlock, dracula, github, monokai, solarizedDark, solarizedLight, tomorrowNight, nord, atomOneDark, atomOneLight, obsidian, ocean, zenburn } from "react-code-blocks";
+import { CopyBlock, dracula, github, monokai, solarizedDark, solarizedLight, tomorrowNight, nord, atomOneDark, atomOneLight, obsidian, ocean, zenburn } from "react-code-blocks";
 import { toast } from "sonner";
 import useLocalStorageState from "use-local-storage-state";
 import { Button } from "./ui/button";
+import { Code } from "react-code-blocks";
 
 interface ButtonCodeblockProps {
   code: string;
@@ -49,7 +50,7 @@ export default function CodeDisplayBlock({ code, lang }: ButtonCodeblockProps) {
 
   return (
     <div className="relative my-4 flex flex-col text-start w-full">
-      <CodeBlock
+      <Code
         customStyle={{
           borderRadius: "8px",
           padding: "12px",
