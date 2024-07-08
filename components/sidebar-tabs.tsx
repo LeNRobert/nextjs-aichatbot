@@ -138,7 +138,7 @@ const SidebarTabs = ({
       </Tabs.Content>
       <Tabs.Content className="h-screen overflow-y-auto" value="settings">
         <div className="h-full mb-16 pl-2">
-          <Settings chatOptions={chatOptions} setChatOptions={setChatOptions} modelsList={modelsList}/>
+          <Settings chatOptions={chatOptions} setChatOptions={setChatOptions} setChatId = {setChatId} modelsList={modelsList}/>
         </div>
       </Tabs.Content>
     </div>

@@ -55,12 +55,13 @@ const TemperatureSlider = ({
   );
 };
 
-type SettingsProps = SystemPromptProps & CustomDropdownMenuProps;
+type SettingsProps = SystemPromptProps & CustomDropdownMenuProps & {setChatId: React.Dispatch<React.SetStateAction<string>>};
 
 export default function Settings({
   chatOptions,
   setChatOptions,
   modelsList,
+  setChatId,
 }: SettingsProps) {
   return (
     <>
@@ -72,7 +73,7 @@ export default function Settings({
       />
       <SettingsThemeToggle/>
       <CodeThemeMenu/>
-      <ClearChatsButton/>
+      <ClearChatsButton setChatId={setChatId}/>
     </>
   );
 }

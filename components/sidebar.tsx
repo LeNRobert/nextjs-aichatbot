@@ -9,6 +9,7 @@ import CatLogo from "@/public/images/cat_ia_test.svg";
 import { ChatOptions } from "./chat/chat-options";
 import SidebarTabs from "./sidebar-tabs";
 import Link from "next/link";
+import { Console } from "console";
 
 interface SidebarProps {
   isCollapsed: boolean;
@@ -115,9 +116,12 @@ export function Sidebar({
     return groupedChats;
   };
 
-  const handleDeleteChat = (chatId: string) => {
-    localStorage.removeItem(chatId);
+  const handleDeleteChat = (chatToDeleteId: string) => {
+    localStorage.removeItem(chatToDeleteId);
     setLocalChats(getLocalstorageChats());
+    if (chatToDeleteId.substring(5) == chatId) {
+      setChatId("");
+    }
   };
 
   return (

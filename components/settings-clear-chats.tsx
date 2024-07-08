@@ -15,7 +15,14 @@ import { useRouter } from "next/navigation";
 import { useHasMounted } from "@/lib/utils";
 import { DialogHeader } from "./ui/dialog";
 
-export default function ClearChatsButton() {
+interface ClearChatsButtonProps {
+  setChatId: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function ClearChatsButton({
+  setChatId,
+}:
+  ClearChatsButtonProps) {
   const hasMounted = useHasMounted();
   const router = useRouter();
 
@@ -34,6 +41,7 @@ export default function ClearChatsButton() {
       localStorage.removeItem(key);
     });
     window.dispatchEvent(new Event("storage"));
+    setChatId("");
     router.push("/");
   };
 
